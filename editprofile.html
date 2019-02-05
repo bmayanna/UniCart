@@ -1,0 +1,433 @@
+<?php   session_start();  ?>
+
+<?php
+      if(!isset($_SESSION['userid'])) // If session is not set then redirect to Login Page
+       {
+           header("Location:Login.php");  
+       }
+?>
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+		<meta name="description" content="Edit Prfoile for user profile" />
+		<meta name="keywords" content="edit,profile" />
+		<meta name="author" content="Codrops" />
+        <meta name="author" content="Avi Singhal">
+        <meta name="author" content="Vishnu Prasad Vishwanathan">
+	
+	<!--circular-->
+			<link rel="stylesheet" type="text/css" href="CircleFlipSlideshow/css/component.css" />
+	<script src="CircleFlipSlideshow/js/modernizr.custom.js"></script>
+	
+	<!--tabs-->
+		<link rel="stylesheet" type="text/css" href="FullWidthTabs/FullWidthTabs/css/component.css" />
+	
+	    <!---lists-->
+    <link rel="stylesheet" type="text/css" href="Baraja/css/baraja.css" />
+    <link rel="stylesheet" type="text/css" href="Baraja/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="Baraja/css/custom.css" />
+    <script type="text/javascript" src="Baraja/js/modernizr.custom.79639.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>Services | Canvas</title>
+<style>
+	input[type=text], input[type=password], [type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+    border:2px solid #dadada;
+    border-radius:7px;
+}
+	input:focus { 
+    outline:none;
+    border-color:#9ecaed;
+    box-shadow:0 0 10px #9ecaed;
+}
+	button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 60%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+	
+	</style>
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+                        <ul>
+                            <li class="current">
+                                <a href="index.html"><div>Home</div></a>
+                                
+                            </li>
+                            <li>
+                                <a href="#"><div>Buying</div></a>
+                                
+                            </li>
+                            <li class="mega-menu">
+                                <a href="#"><div>Selling</div></a>
+                                
+                            </li>   
+							<li class="mega-menu">
+                                <a href="#"><div>Renting</div></a>
+                                
+                            </li>  
+							<li class="mega-menu">
+                                <a href="#"><div>Bidding</div></a>
+                                
+                            </li>   
+							<li class="mega-menu">
+                                <a href="#"><div>Signup</div></a>
+                                
+                            </li>
+							<li class="mega-menu">
+                                <a href="#"><div>Profile</div></a>
+                                
+                            </li>   
+                                    
+                      
+                            <li>
+                                <a href="shop.html"><div>Shop</div></a>
+                                <ul>
+                                    <li><a href="shop.html"><div>4 Columns</div></a></li>
+                                    <li>
+                                        <a href="shop-3.html"><div>3 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-3.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-3-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-3-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="shop-2.html"><div>2 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-2-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-2-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-2-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                  
+									<li>
+                                        <a href="shop-1.html"><div>1 Columns</div></a>
+                                        <ul>
+                                            <li><a href="shop-1.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-1-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-1-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-1-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop-category-parallax.html"><div>Categories - Parallax</div></a></li>
+                                    <li>
+                                        <a href="shop-single.html"><div>Single Product</div></a>
+                                        <ul>
+                                            <li><a href="shop-single.html"><div>Full Width</div></a></li>
+                                            <li><a href="shop-single-right-sidebar.html"><div>Right Sidebar</div></a></li>
+                                            <li><a href="shop-single-left-sidebar.html"><div>Left Sidebar</div></a></li>
+                                            <li><a href="shop-single-both-sidebar.html"><div>Both Sidebar</div></a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="cart.html"><div>Cart</div></a></li>
+                                    <li><a href="checkout.html"><div>Checkout</div></a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+
+                        <!-- Top Cart
+                    ============================================= -->
+                        <div id="top-cart">
+                            <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+                            <div class="top-cart-content">
+                                <div class="top-cart-title">
+                                    <h4>Shopping Cart</h4>
+                                </div>
+                                <div class="top-cart-items">
+                                    <div class="top-cart-item clearfix">
+                                        <div class="top-cart-item-image">
+                                            <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
+                                        </div>
+                                        <div class="top-cart-item-desc">
+                                            <a href="#">Blue Round-Neck Tshirt</a>
+                                            <span class="top-cart-item-price">$19.99</span>
+                                            <span class="top-cart-item-quantity">x 2</span>
+                                        </div>
+                                    </div>
+                                    <div class="top-cart-item clearfix">
+                                        <div class="top-cart-item-image">
+                                            <a href="#"><img src="images/shop/small/6.jpg" alt="Light Blue Denim Dress" /></a>
+                                        </div>
+                                        <div class="top-cart-item-desc">
+                                            <a href="#">Light Blue Denim Dress</a>
+                                            <span class="top-cart-item-price">$24.99</span>
+                                            <span class="top-cart-item-quantity">x 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-cart-action clearfix">
+                                    <span class="fleft top-checkout-price">$114.95</span>
+                                    <button class="button button-3d button-small nomargin fright">View Cart</button>
+                                </div>
+                            </div>
+                        </div><!-- #top-cart end -->
+                        <!-- Top Search
+                    ============================================= -->
+                        <div id="top-search">
+                            <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                            <form action="search.html" method="get">
+                                <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                            </form>
+                        </div><!-- #top-search end -->
+
+                    </nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+
+			<a href="#" class="button button-full center tright footer-stick">
+					<div class="container clearfix">
+						 <strong>USER DASHBOARD</strong> <i class="icon-caret-right" style="top:4px;"></i>
+					</div>
+				</a>	
+
+		</section><!-- #page-title end -->
+		
+		<?php
+$db_host = 'localhost'; 
+$db_user = 'root'; 
+$db_pass = ''; 
+$db_name = 'unicart'; 
+
+$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+if (!$conn) {
+	die ('Failed to connect to MySQL: ' . mysqli_connect_error());	
+}
+
+$sql = 'SELECT * 
+		FROM users WHERE userid=';
+		
+$query = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($query)
+
+if (!$query) {
+	die ('SQL Error: ' . mysqli_error($conn));
+}
+?>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+
+
+				<div class="container clearfix">
+<form method="post" action="updateprofile.php">
+					<div class="col_two_fifth nobottommargin" style="min-height: 350px;">
+
+			
+						FIRST NAME <input type="text" name="firstname"><br>
+						LAST NAME <input type="text" name="lastname"><br>
+							PHONE <input type="number" name="phone"><br>
+							EMAIL <input type="email" name="email"><br>
+						PASSWORD <input type="text" name="password"><br>
+							PAYPALID <input type="email" name="paypalid"><br>
+							
+					</div>
+
+					<div class="col_three_fifth nobottommargin col_last">
+
+					
+						STREET <input type="text" name="street"><br>
+						APARTMENT <input type="text" name="apt"><br>
+							CITY <input type="text" name="city"><br>
+							STATE <input type="text" name="state"><br>
+						COUNTRY <input type="text" name="country"><br>
+							ZIP <input type="number" name="zip"><br>
+					
+						
+						
+						
+						
+	</div>
+	 <button type="submit" name="submit">SUBMIT</button>
+						</form>
+						
+					</div>
+
+					<div class="clear"></div><div class="line"></div>
+			
+			
+			
+			
+			<script src="FullWidthTabs/FullWidthTabs/js/cbpFWTabs.js"></script>
+		<script>
+			new CBPFWTabs( document.getElementById( 'tabs' ) );
+		</script>
+
+
+				</div>
+
+				
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-yahoo">
+								<i class="icon-yahoo"></i>
+								<i class="icon-yahoo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div>
+
+						<div class="clear"></div>
+
+						<i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<!-- Charts JS
+	============================================= -->
+	<script src="js/chart.js"></script>
+	<script src="js/chart-utils.js"></script>
+
+	
+
+</body>
+</html>

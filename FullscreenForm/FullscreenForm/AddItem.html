@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Add Item | UniCart</title>
+		<meta name="description" content="Add Item for renting, selling and bidding" />
+		<meta name="keywords" content="add,new item" />
+		<meta name="author" content="Codrops" />
+        <meta name="author" content="Avi Singhal">
+        <meta name="author" content="Vishnu Prasad Vishwanathan">
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+		<script src="js/modernizr.custom.js"></script>
+        <script src="durselect.js"></script>
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" action="additem.php" method="post" enctype="multipart/form-data">
+					<ol class="fs-fields" id = "oleoluk">
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="itemname">Product Name</label>
+							<input class="fs-anim-lower" id="itemname" name="itemname" type="text" placeholder="Product Name" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="description">Product Description</label>
+							<input class="fs-anim-lower" id="description" name="description" type="text" placeholder="Description" required/>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="type" data-info="This will help us know what kind of service you need">What'the Product Type</label>
+							<!--<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="typeb" name="type" type="radio" value="sell"/><label for="typeb" class="radio-conversion">Sell</label></span>
+								<span><input id="typec" name="type" type="radio" value="bid"/><label for="typec" class="radio-social">Bid</label></span>
+								<span><input id="typea" name="type" type="radio" value="rent"/><label for="typea" class="radio-mobile">Rent</label></span>
+							</div>-->
+                            
+                            <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="typeb" name="type" type="radio" value="sell" onClick="javascript:durationselect();"/><label for="typeb" class="radio-conversion">Sell</label></span>
+								<span><input id="typec" name="type" type="radio" value="bid" onClick="javascript:durationselect();"/><label for="typec" class="radio-social">Bid</label></span>
+								<span><input id="typea" name="type" type="radio" value="rent" onClick="javascript:durationselect();"/><label for="typea" class="radio-mobile">Rent</label></span>
+							</div>
+                            
+                           
+						</li>
+						
+						
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="price">Product Price</label>
+							<input class="fs-mark fs-anim-lower" id="price" name="price" type="number"/>
+						</li>
+						
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="price">Product Image</label>
+							<input class="fs-anim-lower" id="file" name="file" type="file"/>
+						</li>
+                        <li id = "durationlistitem">
+                        	<label class="fs-field-label fs-anim-upper" for="price" id = "durable1">Duration</label>
+							<input class="fs-anim-lower" id="duration" name="duration" type="number"/>
+                        
+						</li>
+					</ol><!-- /fs-fields -->
+					<button class="fs-submit" type="submit">Add Item</button>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+			<!-- Related demos -->
+			
+
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/selectFx.js"></script>
+		<script src="js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+	</body>
+</html>
