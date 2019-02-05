@@ -1,4 +1,4 @@
-# Unicart
+# UniCart
 
 ## INSTALLATION
 
